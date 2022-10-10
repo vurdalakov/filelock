@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AC1B5CE-776A-4699-AAF7-DCD3A4865BB9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Vurdalakov.Native</RootNamespace>
+    <AssemblyName>flock</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>$(SolutionDir)..\obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(SolutionDir)..\bin\</BaseOutputPath>
+    <OutputPath>$(BaseOutputPath)$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.minwindef.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.handleapi.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.ntifs.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.fileapi.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.wdm.cs" />
+    <Compile Include="Vurdalakov.Native\NativeBase.cs" />
+    <Compile Include="Vurdalakov.Native\NativeFileLock.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.ntstatus.cs" />
+    <Compile Include="Vurdalakov.Native\NativeError.cs" />
+    <Compile Include="Vurdalakov.Native\NativeException.cs" />
+    <Compile Include="Vurdalakov.Native\NativeAccessToken.cs" />
+    <Compile Include="Vurdalakov.Native\NativeHandle.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.winternl.cs" />
+    <Compile Include="Vurdalakov.Native\NativeFile.cs" />
+    <Compile Include="Vurdalakov.Native\NativeMemory.cs" />
+    <Compile Include="Vurdalakov.Native\NativeMemory.Static.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.winerror.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.securitybaseapi.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.winnt.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.processthreadsapi.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.winbase.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.cs" />
+    <Compile Include="Vurdalakov.Native\NativeProcessInfo.cs" />
+    <Compile Include="Vurdalakov.Native\NativeProcessSnapshotEntry.cs" />
+    <Compile Include="Vurdalakov.NativeMethods\NativeMethods.tlhelp32.cs" />
+    <Compile Include="Vurdalakov.Native\NativeProcess.cs" />
+    <Compile Include="Vurdalakov.Native\NativeProcessSnapshot.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
